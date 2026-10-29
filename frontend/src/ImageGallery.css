@@ -1,0 +1,35 @@
+/* FeaturedProduct.css */
+.featured-product {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Customize carousel container style */
+/* .carousel {
+   ...
+}
+*/
+
+/* Customize carousel slide style */
+/* .carousel .slide {
+   ...
+}
+*/
+
+/* Customize carousel control arrows style */
+/* .carousel .control-arrow {
+   ...
+}
+*/
+
+/* Customize carousel legend (title) style */
+/* .legend {
+   ...
+}
+*/
+
+/* Style for the carousel images */
+.carousel-image {
+    max-width: 55%;
+    height: auto;
+}

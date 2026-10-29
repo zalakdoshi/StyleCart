@@ -1,0 +1,56 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, input, button {
+  margin: 0;
+  padding: 0;
+}
+
+/* Center content vertically */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+/* Form container styles */
+.form-container {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
+
+/* Form input styles */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button styles */
+.form-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Message styles */
+.message {
+  margin-top: 10px;
+  color: #d9534f;
+  font-size: 14px;
+}
+
+/* Center align form button */
+.form-button-container {
+  display: flex;
+  justify-content: center;
+}

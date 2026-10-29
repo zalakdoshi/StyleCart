@@ -1,0 +1,132 @@
+/* Wishlist.css */
+
+/* Wishlist container styles */
+.wishlist-container {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Empty message styles */
+.empty-message {
+  align-self: flex-start;
+  font-size: 16px;
+  color: #0c0c0c;
+  margin-left: 10px;
+}
+
+/* Wishlist table styles */
+.wishlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.wishlist-table th,
+.wishlist-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.wishlist-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+/* Wishlist item image styles */
+.wishlist-item-image {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.wishlist-item-image:hover {
+  transform: scale(1.1);
+}
+
+/* Title styles */
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+/* Rest of your CSS styles */
+
+/* Center-align the h1 element */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  /* Add spacing below the heading */
+}
+
+/* Style the h1 element */
+h1 {
+  color: #333;
+  /* Heading text color */
+  transition: color 0.3s;
+  /* Add a smooth color transition effect */
+}
+
+/* Style the h1 element on hover */
+h1:hover {
+  color: #ff70d4;
+  /* Change text color on hover */
+}
+
+/* Style the search bar container */
+.search-bar {
+  margin-bottom: 30px;
+  margin-left: 20px;
+  max-width: calc(100% - 50px);
+  /* Adjust the maximum width as needed */
+}
+
+/* Style the input field */
+.search-bar input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  /* Border color for the input field */
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  /* Add a smooth transition effect for the border color and box shadow */
+}
+
+/* Style the input field on hover */
+.search-bar input[type="text"]:hover {
+  border-color: #000000;
+  /* Change border color on hover */
+}
+
+/* Style the input field when focused */
+.search-bar input[type="text"]:focus {
+  border-color: #ff0184;
+  /* Change border color when focused */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Add a box shadow when focused */
+  outline: none;
+  /* Remove the default focus outline */
+}
+
+/* Style the input field text color */
+.search-bar input[type="text"]::placeholder {
+  color: #888;
+  /* Placeholder text color */
+}
+
+/* Style the input field text color on focus */
+.search-bar input[type="text"]:focus::placeholder {
+  color: #ccc;
+  /* Change placeholder text color when focused */
+}

@@ -1,0 +1,81 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.form-container {
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+h2 {
+  margin-bottom: 16px;
+  margin-top: 5%;
+  text-align: center;
+  color: initial;
+  /* Initial text color */
+  transition: color 0.3s ease;
+  /* Transition effect for color change */
+}
+
+h2:hover {
+  color:#ff8ace;
+  /* Color to apply on hover */
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.form-button-container {
+  text-align: center;
+}
+
+.form-button {
+  padding: 10px 20px;
+  background-color: #ff0099;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: #fa1eb8;
+}
+
+.message {
+  text-align: center;
+  color: #ff0000;
+  margin-top: 10px;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.login-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,144 @@
+.navbar {
+  /* Your navbar styles here */
+  /* Example styles: */
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.cart {
+  /* Your cart styles here */
+  /* Example styles: */
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Adjust the cart-table width to match the navbar */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+/* Rest of your CSS styles */.cart-empty {
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  color: #777;
+}
+.cart:hover {
+  box-shadow: 5px 5px 10px #ccc;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.cart-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.cart-item-image {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.cart-item-image:hover {
+  transform: scale(1.1);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.cart-summary{
+  padding-left: 2%;
+}
+
+/* Center-align the h1 element */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  /* Add spacing below the heading */
+}
+
+/* Style the h1 element */
+h1 {
+  color: #333;
+  /* Heading text color */
+  transition: color 0.3s;
+  /* Add a smooth color transition effect */
+}
+
+/* Style the h1 element on hover */
+h1:hover {
+  color: #ff70d4;
+  /* Change text color on hover */
+}
+
+/* Style the search bar container */
+.search-bar {
+  margin-bottom: 30px;
+  margin-left: 20px;
+  max-width: calc(100% - 50px);
+  /* Adjust the maximum width as needed */
+}
+
+/* Style the input field */
+.search-bar input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  /* Border color for the input field */
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  /* Add a smooth transition effect for the border color and box shadow */
+}
+
+/* Style the input field on hover */
+.search-bar input[type="text"]:hover {
+  border-color: #000000;
+  /* Change border color on hover */
+}
+
+/* Style the input field when focused */
+.search-bar input[type="text"]:focus {
+  border-color: #ff0184;
+  /* Change border color when focused */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Add a box shadow when focused */
+  outline: none;
+  /* Remove the default focus outline */
+}
+
+/* Style the input field text color */
+.search-bar input[type="text"]::placeholder {
+  color: #888;
+  /* Placeholder text color */
+}
+
+/* Style the input field text color on focus */
+.search-bar input[type="text"]:focus::placeholder {
+  color: #ccc;
+  /* Change placeholder text color when focused */
+}

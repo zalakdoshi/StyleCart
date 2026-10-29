@@ -1,0 +1,94 @@
+/* NavigationBar.css */
+.navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon:hover .line {
+    background-color: rgb(255, 42, 124);
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.open .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-3px, 5px);
+}
+
+.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.open .line:nth-child(3) {
+    transform: rotate(45deg) translate(-3px, -5px);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin-right: 90px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    /* Add transition effect for color change */
+}
+
+/* Apply color to links only when navigation is open */
+.navigation-bar.open .nav-list li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Apply hover color and transition effect when hovered on li */
+.nav-list li:hover {
+    color: #ff1bbe;
+    /* Change color on hover */
+}
+
+/* ... (other CSS rules) */
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin-right: 90px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    /* Add transition effect for color change */
+}
+
+/* Apply color to links only when navigation is open */
+.navigation-bar.open .nav-list li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Apply hover color and transition effect when hovered on li */
+.navigation-bar.open .nav-list li a:hover {
+    color: #ff1bbe;
+    /* Change color on hover */
+}
