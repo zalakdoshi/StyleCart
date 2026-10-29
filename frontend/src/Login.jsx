@@ -60,6 +60,11 @@ const Login = ({ onLogin }) => {
           </div>
         </form>
         <p className="message">{message}</p>
+      <div className="demo-credentials">
+          <p className="demo-title">🔑 Demo Credentials</p>
+          <p><span>Email:</span> demo@stylecart.com</p>
+          <p><span>Password:</span> demo1234</p>
+        </div>
         <p className="login-link">
           Don't have an account? <Link to="/signup">Sign up</Link>
         </p>
