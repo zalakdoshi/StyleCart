@@ -9,12 +9,12 @@ app.use(cors());
 app.use(express.static("public"));
 app.use("/backend/user", router);
 
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/stylecart";
+
 mongoose
-  .connect(
-    "mongodb+srv://zalakdoshi2005:zalakdoshi2005@cluster0.rnl5qhl.mongodb.net/Intern_project?retryWrites=true&w=majority"
-  )
-  .then(() => app.listen(5000))
+  .connect(MONGODB_URI)
+  .then(() => app.listen(process.env.PORT || 5000))
   .then(() =>
-    console.log("Conected To Database And Listening To Localhost 5000")
+    console.log("Connected To Database And Listening To Port", process.env.PORT || 5000)
   )
   .catch((err) => console.log(err));
