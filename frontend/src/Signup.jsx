@@ -45,6 +45,15 @@ const Signup = ({ onSignup }) => {
           setMessage(data.message);
         } else {
           setMessage("Signup successful!");
+          
+          // Save JWT token and user info to localStorage
+          if (data.token) {
+            localStorage.setItem("authToken", data.token);
+          }
+          localStorage.setItem("username", data.user.username || username);
+          localStorage.setItem("email", email);
+          localStorage.setItem("loginTimestamp", Date.now().toString());
+          
           onSignup(data.user.username); // Assuming 'user' object is returned from backend
           navigate("/");
         }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -20,6 +20,67 @@ function App() {
   const [username, setUsername] = useState("");
   const [cartItems, setCartItems] = useState([]);
   const [wishlistItems, setWishlistItems] = useState([]); // Declare wishlistItems here
+
+  // Initialize authentication state from localStorage on app mount
+  useEffect(() => {
+    const savedToken = localStorage.getItem("authToken");
+    const savedUsername = localStorage.getItem("username");
+    const loginTimestamp = localStorage.getItem("loginTimestamp");
+    
+    if (savedToken && savedUsername) {
+      // Check if token is still valid (24 hour expiration)
+      const tokenAge = Date.now() - parseInt(loginTimestamp, 10);
+      const TOKEN_EXPIRATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+      
+      if (tokenAge < TOKEN_EXPIRATION) {
+        // Token is still valid, restore the session
+        setUsername(savedUsername);
+        setIsLoggedIn(true);
+      } else {
+        // Token has expired, clear localStorage and logout
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("username");
+        localStorage.removeItem("email");
+        localStorage.removeItem("loginTimestamp");
+        setUsername("");
+        setIsLoggedIn(false);
+      }
+    }
+    
+    // Load cart and wishlist from localStorage
+    const savedCartItems = localStorage.getItem("cartItems");
+    const savedWishlistItems = localStorage.getItem("wishlistItems");
+    
+    if (savedCartItems) {
+      try {
+        setCartItems(JSON.parse(savedCartItems));
+      } catch (e) {
+        console.error("Error loading cart items:", e);
+      }
+    }
+    
+    if (savedWishlistItems) {
+      try {
+        setWishlistItems(JSON.parse(savedWishlistItems));
+      } catch (e) {
+        console.error("Error loading wishlist items:", e);
+      }
+    }
+  }, []);
+
+  // Save cart items to localStorage whenever they change
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
+
+  // Save wishlist items to localStorage whenever they change
+  useEffect(() => {
+    if (wishlistItems.length > 0) {
+      localStorage.setItem("wishlistItems", JSON.stringify(wishlistItems));
+    }
+  }, [wishlistItems]);
 
   const handleLogin = (username) => {
     setUsername(username);
@@ -48,8 +109,21 @@ function App() {
   };
 
   const handleLogout = () => {
+    // Clear authentication from localStorage
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    localStorage.removeItem("loginTimestamp");
+    
+    // Reset state
     setUsername("");
     setIsLoggedIn(false);
+    setCartItems([]);
+    setWishlistItems([]);
+    
+    // Clear cart and wishlist from localStorage
+    localStorage.removeItem("cartItems");
+    localStorage.removeItem("wishlistItems");
   };
 
   // Define handleAddToWishlist to add products to the wishlist

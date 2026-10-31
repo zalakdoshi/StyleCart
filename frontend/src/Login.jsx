@@ -24,6 +24,15 @@ const Login = ({ onLogin }) => {
 
       if (data.message === "Login Successfull") {
         setMessage("Login successful!");
+        
+        // Save JWT token and user info to localStorage
+        if (data.token) {
+          localStorage.setItem("authToken", data.token);
+        }
+        localStorage.setItem("username", data.username);
+        localStorage.setItem("email", email);
+        localStorage.setItem("loginTimestamp", Date.now().toString());
+        
         onLogin(data.username);
         navigate("/"); // Redirect to the homepage
       } else {
@@ -31,6 +40,7 @@ const Login = ({ onLogin }) => {
       }
     } catch (error) {
       console.error(error);
+      setMessage("Login failed. Please try again.");
     }
   };
 
